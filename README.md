@@ -5,7 +5,7 @@ library(ISLR) # cada vez que queiro usar la biblioteca
 data("Carseats") # carga los datos
 ? Carseats # descripcion de los datos
 
-Utilizando estos datos vamos a ajustar varios modelos teniendo Sales como variable dependiente, 
+Utilizando estos datos vamos a ajustar varios modelos teniendo "Sales" como variable dependiente, 
 utilizamos las bibliotecas que trabajamos en clase:
 
 library(rpart)
