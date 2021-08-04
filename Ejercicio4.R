@@ -11,7 +11,7 @@ library(ggplot2)
 library(Hmisc) ## para apliocar describe
 data("Carseats")
 
-#Estadístico del dataset
+#EstadÃ­stico del dataset
 di <- describe(Carseats)
 summary(Carseats)
 str(Carseats)
@@ -19,7 +19,7 @@ str(Carseats)
 ##1. Dividir los datos en un conjunto de entrenamiento y un conjunto de control.
 
 Carseats=data.frame(Carseats)
-# Defino un tamaño de la muestra
+# Defino un tamaÃ±o de la muestra
 crseats_size = floor(0.75*nrow(Carseats)) ## lo defino en un 75%
 
 set.seed(123)   # set seed to ensure you always have same random numbers generated
@@ -37,4 +37,22 @@ mytree <- rpart( Sales ~ CompPrice + Income + Advertising
 
 fancyRpartPlot(mytree, caption = NULL)
 rpart.plot(mytree)
+
+#Minimum Square error
+MSE <- mean((pred_model-test$Sales)^2)
+
+rmse(test$Sales,pred_model)
+
+fancyRpartPlot(mytree, caption = NULL)
+rpart.plot(mytree)
+
+#3. Utilizando validacion cruzada determinar nivel optimo complejidad y obtener 
+#un arbol podado. En este caso, Â¿podar el arbol mejora error de generalizacion?
+
+#Cross-Validation con cv.tree
+set.seed(123)
+cv.carseats<-cv.tree(mytree,prune.tree,K=10)
+
+#Arbol podado
+cv.carseats=cv.tree(mytree,FUN=prune.misclass)
 
