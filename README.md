@@ -1,5 +1,7 @@
 # Aprendizaje-Estadistico
-Ejercicio 3,
+Material y tareas sobre la materia de posgrado de Aprendizaje Estadístico.
+
+# Ejercicio 3
 Lenguaje utilizado: python,
 Demostraciones sobre la probabilidad de j-esimas observaciones sean muestras bootstrap.
 Las librerías a utilizar son: 
